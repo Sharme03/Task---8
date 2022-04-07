@@ -1,0 +1,77 @@
+"use strict";
+
+// 3) Write a “person” class to hold all the details.
+
+class Person{
+    static Company="Healthcare";
+    constructor(name,age,address,phone){
+        this.name=name;
+        this.age=age;
+        this.address=address;
+        this.phone=phone;
+        console.log("Iam Person class constructor");
+    }
+    getData(){
+        let personData =`
+        Name:${this.name},
+        Age:${this.age},
+        Address:${this.address},
+        Mobile:${this.phone}
+        `
+        console.log(personData);
+    }
+    static getCompanyName(){
+        console.log(Person.Company);
+    }
+}
+class Employee extends Person {
+    static Company1="Wipro"
+    constructor(name,age,address,phone,designation,salary){
+        super(name,age,address,phone);
+        this.designation = designation;
+        this.salary = salary;
+        console.log("Iam Employee class constructor");
+    }
+    getData(){
+        let employeeData =`
+        Name:${this.name},
+        Age:${this.age},
+        Address:${this.address},
+        Mobile:${this.phone}
+        Designation:${this.designation},
+        Salary:${this.salary}
+        `
+        console.log(employeeData);
+    }
+    static getCompanyName(){
+        console.log(Employee.Company1);
+    }
+}
+let person1=new Person("Sharme","27","Chennai","8056xxxxxx");
+person1.getData();
+Person.getCompanyName();
+
+let employee1=new Employee("Devi","27","Chennai","8637xxxxxx","Frond End Developer","8 LPA");
+employee1.getData();
+Employee.getCompanyName();
+
+
+Output:
+
+Iam person class constructor
+
+        Name:Sharme,
+        Age:27,
+        Address:Chennai,
+        Mobile:8056xxxxxx
+
+Iam person class constructor
+
+        Name:Devi,
+        Age:27,
+        Address:Chennai,
+        Mobile:8637xxxxxx
+        Designation:Frond End Developer,
+        Salary:8 LPA
+
+Wipro
