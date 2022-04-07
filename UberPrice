@@ -1,0 +1,31 @@
+//4) write a class to calculate uber price.
+
+class Uber{
+    static BaseFare = 30;
+    static RatePerMinute = 2;
+    static RatePerKM = 10;
+    static BookingFare = 10;
+    constructor(time=1,KM=1){
+        this.time=time;
+        this.KM=KM;
+    }
+    UberGo(time=this.time,KM=this.KM){
+        console.log(`Total cost of UberGo is ₹ ${(Uber.BaseFare)+((Uber.RatePerMinute)*time)+((Uber.RatePerKM)*KM)+(Uber.BookingFare)}`);
+    }
+    UberX(time=this.time,KM=this.KM){
+        console.log(`Total cost of UberX is ₹ ${(Uber.BaseFare=58.30)+((Uber.RatePerMinute)*time)+((Uber.RatePerKM=20)*KM)+(Uber.BookingFare)}`);
+    }
+    UberXL(time=this.time,KM=this.KM){
+        console.log(`Total cost of UberXL is ₹ ${(Uber.BaseFare=80.8)+((Uber.RatePerMinute)*time)+((Uber.RatePerKM=16)*KM)+(Uber.BookingFare)}`)
+    }
+}
+let ride = new Uber();
+ride.UberGo(25,10);
+ride.UberX(25.10);
+ride.UberXL(25,10);
+
+Output:
+
+Total cost of UberGo is ₹ 190
+Total cost of UberX is ₹ 138.5
+Total cost of UberXL is ₹ 300.8
