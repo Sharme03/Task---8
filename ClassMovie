@@ -1,0 +1,38 @@
+// 1) https://github.com/rvsp/typescript-oops/blob/master/Practice/Movie.md
+
+class Movie {
+  constructor(title, studio, rating = "PG") {
+    this.title = title;
+    this.studio = studio;
+    this.rating = rating;
+  }
+  static getPG(arr) {
+    let result = arr.filter((movie) => movie.rating == "PG");
+    return result;
+  }
+}
+let a = new Movie("Pushpa", "Mythri Movie Makers", "PG");
+let b = new Movie("Enna Solla Pogirai", "Trident Arts", "PG");
+let c = new Movie("Avengers Endgame", "Marvel Studios", "PG");
+// let moviesArr = [a, b, c];
+console.log(Movie.getPG([ a, b, c]));
+
+Output
+
+[
+  Movie {
+    title: 'Pushpa',
+    studio: 'Mythri Movie Makers',
+    rating: 'PG'
+  },
+  Movie {
+    title: 'Enna Solla Pogirai',
+    studio: 'Trident Arts',
+    rating: 'PG'
+  },
+  Movie {
+    title: 'Avengers Endgame',
+    studio: 'Marvel Studios',
+    rating: 'PG'
+  }
+]
