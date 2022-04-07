@@ -1,0 +1,48 @@
+// 2) https://github.com/rvsp/typescript-oops/blob/master/Practice/class-circle.md
+
+class Circle {
+  constructor(...args) {
+    [this.radius, this.color] = args;
+  }
+  getRadius() {
+    // console.log(this.radius);
+    return this.radius;
+  }
+  getColor() {
+    // console.log(this.color);
+    return this.color;
+  }
+  setRadius(value) {
+    this.radius = value;
+  }
+  setColor(value) {
+    this.color = value;
+  }
+  toString() {
+    return `radius=${this.radius},color=${this.color}`;
+  }
+  getAera() {
+    return Math.PI * Math.pow(this.radius, 2);
+  }
+  getCircumference() {
+    return Math.PI * 2 * this.radius;
+  }
+}
+let myCircle = new Circle(13, "red");
+console.log(myCircle);
+myCircle.setRadius(3.4);
+console.log(myCircle.getRadius());
+myCircle.setColor("blue");
+console.log(myCircle.getColor());
+console.log(myCircle.toString());
+console.log(myCircle.getAera());
+console.log(myCircle.getCircumference());
+
+Output:
+Circle { radius: 13, color: 'red' }
+3.4
+blue
+radius=3.4,color=blue
+36.316811075498      
+21.362830044410593   
+
